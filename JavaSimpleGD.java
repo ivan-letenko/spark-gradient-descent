@@ -40,9 +40,9 @@ public class JavaSimpleGD {
                 .setMaxIterations(maxIterations);
         weights = bgd.optimise(points, weights);
 
-        String output = "Final weights: " + Arrays.toString(weights);
-        System.out.println(output);
-
+        double[] fWeights = Arrays.copyOfRange(weights, 1, weights.length);
+        System.out.println("Final weights: " + Arrays.toString(fWeights));
+        System.out.println("Final intercept: " + weights[0]);
         sc.stop();
     }
 }

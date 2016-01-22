@@ -20,9 +20,7 @@ public class GDUtils {
                         double y = Double.parseDouble(tok[0]);
                         double[] x = new double[D];
                         x[0] = 1; // for theta zero
-                        for (int i = 1; i < D; i++) {
-                            x[i] = Double.parseDouble(tok[i]);
-                        }
+                        for (int i = 1; i < D; i++) x[i] = Double.parseDouble(tok[i]);
                         return new DataPoint(x, y);
                     }
                 });
@@ -30,21 +28,5 @@ public class GDUtils {
         return points;
 
     }
-    /*
-    static class ParsePoint implements Function<String, DataPoint> {
 
-
-        @Override
-        public DataPoint call(String line) {
-            String[] tok = SPACE.split(line);
-            double y = Double.parseDouble(tok[0]);
-            double[] x = new double[D];
-            x[0] = 1; // for theta zero
-            for (int i = 1; i < D; i++) {
-                x[i] = Double.parseDouble(tok[i]);
-            }
-            return new DataPoint(x, y);
-        }
-    }
-    */
 }

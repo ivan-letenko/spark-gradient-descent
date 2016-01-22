@@ -35,9 +35,10 @@ public class BatchGradientDescent {
         while (!convergence && iteration < maxIterations){
             iteration++;
 
-            double[] gradient = data
-                    .map(new ComputeGradient(weights))
-                    .reduce(new VectorSum());
+            double[] gradient = data.treeAggregate(
+                    new double[weights.length],
+                    new ComputeGradient(weights),
+                    new VectorSum());
 
             double[] tmpWeights = new double[numFeatures];
 
@@ -62,7 +63,7 @@ public class BatchGradientDescent {
         }
     }
 
-    static class ComputeGradient implements Function<DataPoint, double[]> {
+    static class ComputeGradient implements Function2<double[], DataPoint, double[]> {
         private final double[] weights;
 
         ComputeGradient(double[] weights) {
@@ -70,14 +71,15 @@ public class BatchGradientDescent {
         }
 
         @Override
-        public double[] call(DataPoint p) {
+        public double[] call(double[] thetas, DataPoint p) {
             double label = p.y;
             double[] features = p.x;
-            double[] thetas = new double[features.length];
+            //double[] thetas = new double[features.length];
             double h = computeEstimate(features);
             for (int i = 0; i < features.length; i++) {
-                thetas[i] = (h - label) * features[i];
+                thetas[i] += (h - label) * features[i];
             }
+
             return thetas;
         }
 
@@ -86,10 +88,12 @@ public class BatchGradientDescent {
             double out = 0; // features[0] = 1
             for (int i = 0; i < weights.length; i++) {
                 out += weights[i] * features[i];
-
             }
             return out;
         }
 
+
     }
+
+
 }
