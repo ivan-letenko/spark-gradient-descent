@@ -8,6 +8,7 @@
     <artifactId>spark-gradient-descent</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
+    
     <dependencies>
         <dependency> <!-- Spark dependency -->
             <groupId>org.apache.spark</groupId>
