@@ -7,7 +7,8 @@ For the test dataset (data-norm.csv) convergence is achieved after 152 iteration
 #### How to build:
 mvn package
 #### How to run:
-'JavaSimpleGD <file> <dimensions> [<iterations> <rate> <convergence>]'
+`JavaSimpleGD <file> <dimensions> [<iterations> <rate> <convergence>]`
 
 For example:
-'spark-submit --class "JavaSimpleGD" --master local[4] spark-gradient-descent-1.0.jar data-norm.csv 2 200 0.6'
+
+`spark-submit --class "JavaSimpleGD" --master local[4] spark-gradient-descent-1.0.jar data-norm.csv 2 200 0.6`
