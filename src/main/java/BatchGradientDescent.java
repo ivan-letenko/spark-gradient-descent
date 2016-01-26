@@ -91,9 +91,5 @@ public class BatchGradientDescent {
             }
             return out;
         }
-
-
     }
-
-
 }

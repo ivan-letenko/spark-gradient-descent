@@ -9,7 +9,6 @@ import java.util.Arrays;
  */
 public class JavaSimpleGD {
 
-
     public static void main(String[] args) {
 
         if (args.length < 2) {
@@ -30,7 +29,6 @@ public class JavaSimpleGD {
         double convergenceMin = 0.0001;
         if (args.length > 4)
             convergenceMin = Double.parseDouble(args[3]);
-
 
         JavaRDD<DataPoint> points = GDUtils.loadCSVFile(sc, fileName, dimensions).cache();
         double[] weights = new double[dimensions];
