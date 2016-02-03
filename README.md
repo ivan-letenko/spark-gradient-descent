@@ -18,5 +18,5 @@ The root-mean-square error (RMSE) of predicted values is 0.135867
 
 ![Visualization of the data-norm.csv dataset.](https://raw.githubusercontent.com/ivan-letenko/spark-gradient-descent/master/data-norm.png)
 
-The alorithm is also tested on a [subset](https://github.com/spark-mooc/cs190-data) of the [Million Song Dataset](http://labrosa.ee.columbia.edu/millionsong/) from BerkeleyX Spark Intro MOOC.
+The algorithm is also tested on a [subset](https://github.com/spark-mooc/cs190-data) of the [Million Song Dataset](http://labrosa.ee.columbia.edu/millionsong/) from BerkeleyX Spark Intro MOOC.
 The RMSE of the model is 15.2921
