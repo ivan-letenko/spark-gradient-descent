@@ -1,9 +1,7 @@
 ﻿# Distributed Batch Gradient Descent (Spark)
 Implementation of a distributed batch gradient descent algorithm for Apache Spark in Java.
 For more information about algorithm see Andrew Ng’s machine learning course on Coursera.
-For the test dataset (data-norm.csv) convergence is achieved after 152 iterations at value of learning rate = 0.6.
 
-Θ0= 0.11756730664520179, Θ1=0.8671378657592101
 #### How to build:
 mvn package
 #### How to run:
@@ -15,6 +13,8 @@ For example:
 #### Experiment:
 For the test dataset (data-norm.csv) convergence is achieved after 152 iterations at value of learning rate = 0.6.
 The root-mean-square error (RMSE) of predicted values is 0.135867
+
+Θ0= 0.11756730664520179, Θ1=0.8671378657592101
 
 ![Visualization of the data-norm.csv dataset.](https://raw.githubusercontent.com/ivan-letenko/spark-gradient-descent/master/data-norm.png)
 
